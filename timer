@@ -1,0 +1,48 @@
+import SwiftUI
+
+struct ContentView: View {
+    @State var round = 0
+    @State var seconds = 0
+    var body: some View {
+        
+        VStack{
+            
+            //1移動させるやつ分からん
+            NavigationView {
+                NavigationLink("READY", destination: timerstart())
+                            }
+            
+            List {
+                    //時間ピッカー部分
+                    Picker(selection: $seconds, label: Text("秒数"))
+                    {
+                        Text("30秒").tag(0)
+                        Text("60秒").tag(1)
+                        Text("90秒").tag(2)
+                        Text("120秒").tag(3)
+                    }
+                    .pickerStyle(.inline)
+                }.padding().frame(height: 300.0)
+                
+                List {
+                    //本数ピッカー部分
+                    Picker(selection: $round, label: Text("ラウンド")) {
+                        Text("1").tag(4)
+                        Text("2").tag(5)
+                        Text("3").tag(6)
+                        Text("4").tag(7)
+                    }
+                    .pickerStyle(.inline)
+                }
+                .padding()
+                .frame(height: 300.0)
+            }
+        
+                }
+            }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
