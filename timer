@@ -7,7 +7,7 @@ struct ContentView: View {
         
         VStack{
             
-            //1移動させるやつ分からん
+            //1移動させるやつ
             NavigationView {
                 NavigationLink("READY", destination: timerstart())
                             }
@@ -39,7 +39,18 @@ struct ContentView: View {
             }
         
                 }
+                //移動先のページ内容です
+    struct timerstart: View {
+        var body: some View {
+            Text("timerstart")
+        }
+    }
             }
+
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
